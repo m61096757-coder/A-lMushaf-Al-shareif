@@ -1,4 +1,4 @@
-const CACHE='mushaf-v1';
+const CACHE='mushaf-v2';
 const FILES=['./','index.html','manifest.webmanifest','icon-192.png','icon-512.png','fonts/AmiriQuran-Regular.ttf'];
 self.addEventListener('install',e=>{
   e.waitUntil(caches.open(CACHE).then(c=>Promise.all(FILES.map(f=>c.add(f).catch(()=>{})))).then(()=>self.skipWaiting()));
